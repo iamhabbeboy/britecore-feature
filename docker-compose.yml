@@ -1,0 +1,19 @@
+version: "2"
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        links:
+            - db
+        ports:
+            - "8080:5000"
+    db:
+        image: mysql:8
+        ports:
+            - "32000:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: "nigeriA070"
+            MYSQL_DATABASE: "features"
+        volumes:
+            - ./db:/docker-entrypoint-initdb.d/:ro

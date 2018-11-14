@@ -1,0 +1,41 @@
+
+body{
+	background: rgba($secondary, 0.7);
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+}
+
+.request-layout {
+	background-color: rgba($color-white, 0.9) !important;
+	margin-top: 20px;
+	padding: 40px;
+	border-radius: 8px;
+}
+
+.form-control:focus, .form-control:active, .btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+   border-color: $primary;
+}
+
+.btn-primary {
+	width: 100% !important;
+	margin-top: 10px;
+	background-color: $primary;
+	border-width: 0px;
+	padding: 10px;
+	border-radius: 10px; 
+	border-color: transparent;
+	&:hover {
+		background-color: rgba($primary, 0.8);
+		border-color: transparent !important;
+	}
+}
+
+h1, h2, h3, h4 {
+	color: $primary;
+}
+
+.color-red {
+	color: $color-red;
+}

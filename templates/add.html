@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3 request-layout">
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {% for message in messages %}
+                      <div class="alert alert-success">{{ message }}</div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+            <h3>New Feature </h3>
+            <form method="post" id="feature-form" action="/add-new">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control feature-validate" name="title" spellcheck="off" autocomplete="off" required=""> 
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control feature-validate" name="description" class="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Client</label>
+                    <select class="form-control feature-validate" name="client" required>
+                        <option value="ClientA">Client A</option>
+                        <option value="ClientB">Client B</option>
+                        <option value="Client C">Client C</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Client Priority (1-n)</label>
+                    <input type="number" class="form-control feature-validate" name="client_priority" required>
+                </div>
+                <div class="form-group">
+                    <label>Target Date</label>
+                    <input type="text" class="form-control feature-validate" name="target_date" id="target-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Product Area</label>
+                    <select class="form-control feature-validate" name="product_areas" required="">
+                        <option value="Policies">Policies</option>
+                        <option value="Billing">Billing</option>
+                        <option value="Claims">Claims</option>
+                        <option value="Reports">Reports</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
