@@ -1,4 +1,4 @@
-## Architecture**
+## Architecture
 
 
 Models: In the models package, there is the `model.py` file which is used to 
@@ -18,4 +18,4 @@ make SQL queries to the Database using SQLAlchemy.
 Amazon Web Service EC2 instance running Ubuntu is used to deployed the project.
 
 Nginx is also used as a proxy and gunicorn as the WSGI server for the app.
- 
+
